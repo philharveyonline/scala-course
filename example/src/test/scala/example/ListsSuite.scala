@@ -118,6 +118,22 @@ class ListsSuite extends FunSuite {
     assert(sum(List(1,2,0)) === 3)
   }
   
+  test("sum of an empty list") {
+    assert(sum(List()) === 0)
+  }
+  
+  test("sum of a singleton list") {
+    assert(sum(List(1)) === 1)
+  }
+  
+  test("sum of a repeated list") {
+    assert(sum(List(1, 1, 1)) === 3)
+  }
+  
+  test("sum of negative numbers") {
+    assert(sum(List(1, -2)) === -1)
+  }
+  
   test("max of a few numbers") {
     assert(max(List(3, 7, 2)) === 7)
   }
