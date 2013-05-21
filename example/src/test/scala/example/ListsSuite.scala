@@ -137,4 +137,23 @@ class ListsSuite extends FunSuite {
   test("max of a few numbers") {
     assert(max(List(3, 7, 2)) === 7)
   }
+  
+  test("max of a singleton list") {
+    assert(max(List(3)) === 3)
+  }
+
+  test("max of a list containing negative numbers") {
+    assert(max(List(-1, 0)) === 0)
+  }
+
+  test("max of a list containing duplicate numbers") {
+    assert(max(List(2, 2)) === 2)
+  }
+
+    
+  test("max of an empty list throws NoSuchElementException") {
+    intercept[NoSuchElementException] {
+      max(List())
+    }
+  }
 }

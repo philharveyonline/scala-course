@@ -46,5 +46,25 @@ object Lists {
    * @return The largest element in `xs`
    * @throws java.util.NoSuchElementException if `xs` is an empty list
    */
-  def max(xs: List[Int]): Int = 0
+  def max(xs: List[Int]): Int = {
+    if(xs.isEmpty) {
+      throw new NoSuchElementException
+    }
+    else {
+      maxRecursively(Integer.MIN_VALUE, xs)
+    }
+  }
+  
+  def maxRecursively(curMax: Int, xs: List[Int]) : Int = {
+    if(xs.isEmpty) {
+      curMax
+    }
+    else if(curMax > xs.head) {
+      maxRecursively(curMax, xs.tail)
+    }
+    else {
+      maxRecursively(xs.head, xs.tail)
+    }
+    
+  }
 }
